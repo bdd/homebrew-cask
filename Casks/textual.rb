@@ -1,6 +1,15 @@
-class Textual < Cask
-  url 'http://www.codeux.com/textual/private/downloads/builds/Textual_Demo_12536.zip'
-  homepage 'http://www.codeux.com/textual/'
-  version '2.1.1'
-  sha1 'af057d11e3578afa3b80f4f26093978389982ca2'
+cask 'textual' do
+  version :latest
+  sha256 :no_check
+
+  url 'https://www.codeux.com/textual/downloads/Textual.dmg'
+  name 'Textual'
+  homepage 'https://www.codeux.com/textual/'
+
+  app 'Textual.app'
+
+  zap trash: [
+               '~/Library/Preferences/com.codeux.apps.textual.plist',
+               '~/Library/Application Support/Textual',
+             ]
 end

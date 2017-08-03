@@ -1,6 +1,15 @@
-class MplayerOsxExtended < Cask
-  url 'https://mplayerosxext.googlecode.com/files/MPlayer-OSX-Extended_rev15-test2.zip'
-  homepage 'http://www.mplayerosx.ch/'
-  version 'rev15-test2'
-  sha1 'ef13167d15ca93a8f9b31b597d4d6b6314a26425'
+cask 'mplayer-osx-extended' do
+  version 'rev15'
+  sha256 '7979f2369730d389ceb4ec3082c65ffa3ec70f812f0699a2ef8acbae958a5c93'
+
+  # github.com/sttz/MPlayer-OSX-Extended was verified as official when first introduced to the cask
+  url "https://github.com/sttz/MPlayer-OSX-Extended/releases/download/#{version}/MPlayer-OSX-Extended_#{version}.zip"
+  appcast 'https://github.com/sttz/MPlayer-OSX-Extended/releases.atom',
+          checkpoint: '0a27d2b111abfe68462e7ef0cb71e9efe1ea34921b8a7a2dc208713208242dba'
+  name 'MPlayer OSX Extended'
+  homepage 'https://mplayerosx.ch/'
+
+  app 'MPlayer OSX Extended.app'
+
+  zap trash: '~/.mplayer'
 end

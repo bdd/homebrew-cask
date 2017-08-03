@@ -1,6 +1,11 @@
-class AirVideoServer < Cask
-  url 'http://s3.amazonaws.com/AirVideo/Air+Video+Server+2.4.6-beta3u1.dmg'
+cask 'air-video-server' do
+  version '2.4.6-beta3u2'
+  sha256 '479af913987a4cc8414969a8d4a4c164a4bd0a22d156829a983b4c58e9dd3f6e'
+
+  # amazonaws.com/AirVideo was verified as official when first introduced to the cask
+  url "http://s3.amazonaws.com/AirVideo/Air+Video+Server+#{version}.dmg"
+  name 'Air Video Server'
   homepage 'http://www.inmethod.com/air-video/'
-  version '2.4.6-beta3'
-  sha1 '2293b653fea6a939ab863a7bf918d601a504c9c8'
+
+  app 'Air Video Server.app'
 end

@@ -1,6 +1,17 @@
-class Ukelele < Cask
-  url 'http://scripts.sil.org/cms/scripts/render_download.php?format=file&media_id=Ukelele_2.2.4&filename=Ukelele_2.2.4.dmg'
+cask 'ukelele' do
+  version '3.2.5'
+  sha256 '07978444b295950b08c0533c403e79c63c67d18ebcd11563d1ee213e57f77ef9'
+
+  url "https://scripts.sil.org/cms/scripts/render_download.php?format=file&media_id=Ukelele_#{version}&filename=Ukelele_#{version}.dmg"
+  name 'Ukelele'
   homepage 'http://scripts.sil.org/ukelele'
-  version '2.2.4'
-  sha1 'f322ccfbc5b2efb24d0d5cf902dfd0ae552322e5'
+
+  app 'Ukelele.app'
+
+  zap delete: [
+                '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.sil.ukelele.sfl',
+                '~/Library/Preferences/org.sil.ukelele.plist',
+                '~/Library/Preferences/Ukelele',
+                '~/Library/Caches/org.sil.Ukelele',
+              ]
 end

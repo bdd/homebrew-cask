@@ -1,6 +1,10 @@
-class Dashlane < Cask
-  url 'https://d3mfqat9ni8wb5.cloudfront.net/releases/1.7.5/1.7.5.28074/Dashlane.dmg'
+cask 'dashlane' do
+  version :latest
+  sha256 :no_check
+
+  url 'https://www.dashlane.com/directdownload?platform=mac'
+  name 'Dashlane'
   homepage 'https://www.dashlane.com/'
-  version '1.7.5.28074'
-  sha1 'a79c49e7776c4b5da15f36cbbdc979dd21f24779'
+
+  app 'Dashlane.app'
 end
